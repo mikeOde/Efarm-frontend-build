@@ -15,7 +15,7 @@ import ProtectedCustomerRoute from "./components/protected-routes/ProtectedFarme
 function App() {
   return (
     <Switch>
-      <Route path="/" exact component={RegistrationForm} />
+      <Route path="/efarm" exact component={RegistrationForm} />
 
       <ProtectedFarmerRoute path="/profile" component={Profile} />
       <ProtectedFarmerRoute path="/dashboard" component={Dashboard} />
