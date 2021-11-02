@@ -17,17 +17,17 @@ function App() {
     <Switch>
       <Route path="/efarm" exact component={RegistrationForm} />
 
-      <ProtectedFarmerRoute path="/profile" component={Profile} />
-      <ProtectedFarmerRoute path="/dashboard" component={Dashboard} />
-      <ProtectedFarmerRoute path="/vegetables" component={Vegetables} />
-      <ProtectedFarmerRoute path="/trees" component={Trees} />
-      <ProtectedCustomerRoute path="/home" component={Home} />
-      <ProtectedCustomerRoute path="/farm/:farmId" component={Farm} />
+      <ProtectedFarmerRoute path="https://mikeode.github.io/efarm/profile" component={Profile} />
+      <ProtectedFarmerRoute path="https://mikeode.github.io/efarm/dashboard" component={Dashboard} />
+      <ProtectedFarmerRoute path="/efarm/vegetables" component={Vegetables} />
+      <ProtectedFarmerRoute path="/efarm/trees" component={Trees} />
+      <ProtectedCustomerRoute path="/efarm/home" component={Home} />
+      <ProtectedCustomerRoute path="/efarm/farm/:farmId" component={Farm} />
       {/* <Route path="/farm/:farmId">
         <Farm />
       </Route> */}
-      <ProtectedCustomerRoute path="/orders" component={Orders} />
-      <ProtectedCustomerRoute path="/adoptions" component={Adoptions} />
+      <ProtectedCustomerRoute path="/efarm/orders" component={Orders} />
+      <ProtectedCustomerRoute path="/efarm/adoptions" component={Adoptions} />
       
     </Switch>
   );
