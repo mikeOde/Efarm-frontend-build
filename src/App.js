@@ -17,8 +17,8 @@ function App() {
     <Switch>
       <Route path="/efarm" exact component={RegistrationForm} />
 
-      <ProtectedFarmerRoute path="https://mikeode.github.io/efarm/profile" component={Profile} />
-      <ProtectedFarmerRoute path="https://mikeode.github.io/efarm/dashboard" component={Dashboard} />
+      <ProtectedFarmerRoute path="/efarm/profile" component={Profile} />
+      <ProtectedFarmerRoute path="/efarm/dashboard" component={Dashboard} />
       <ProtectedFarmerRoute path="/efarm/vegetables" component={Vegetables} />
       <ProtectedFarmerRoute path="/efarm/trees" component={Trees} />
       <ProtectedCustomerRoute path="/efarm/home" component={Home} />
