@@ -35,7 +35,13 @@ const api = {
     addVegetable: (addItemData) =>
     axios.post(`${BASE_URL}/add_vegetables`, addItemData, token),
 
+    deleteVegetable: (deleteItemData) =>
+    axios.post(`${BASE_URL}/delete_vegetable`, deleteItemData, token),
+
     addTree: (addItemData) =>
-    axios.post(`${BASE_URL}/add_trees`, addItemData, token)
+    axios.post(`${BASE_URL}/add_trees`, addItemData, token),
+
+    deleteTree: (deleteItemData) =>
+    axios.post(`${BASE_URL}/delete_tree`, deleteItemData, token),
 }
 export default api;

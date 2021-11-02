@@ -8,6 +8,45 @@ import Typography from "@mui/material/Typography";
 import { Avatar, Button, Grid } from "@mui/material";
 
 function ItemCard(props) {
+  function deleteHandler() {
+    console.log(props.type);
+    console.log(parseInt(props.id));
+    const itemId = parseInt(props.id);
+    const deleteItemData = {
+      id: itemId,
+    };
+    if (props.type === "1") {
+      console.log("vegetable");
+      api
+        .deleteVegetable(deleteItemData, {
+          headers: {
+            Accept: "application/json",
+            "content-type": "application/json",
+          },
+        })
+        .then((response) => {
+          if (response.data.status) {
+            window.location.reload();
+            console.log(response);
+          }
+        });
+    } else {
+      api
+        .deleteTree(deleteItemData, {
+          headers: {
+            Accept: "application/json",
+            "content-type": "application/json",
+          },
+        })
+        .then((response) => {
+          if (response.data.status) {
+            window.location.reload();
+            console.log(response);
+          }
+        });
+    }
+  }
+
   return (
     <Grid item xs={12} sm={6} lg={4}>
       <Card elevation={7}>
@@ -19,7 +58,7 @@ function ItemCard(props) {
         />
         <CardHeader
           title={props.name}
-          subheader= {"$"+props.price}
+          subheader={"$" + props.price}
           action={
             <Avatar sx={{ bgcolor: "#F2AB50" }} aria-label="recipe">
               <Typography>{props.quantity}</Typography>
@@ -32,7 +71,13 @@ function ItemCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="medium" color="error" fullWidth={true} variant="contained">
+          <Button
+            size="medium"
+            color="error"
+            fullWidth={true}
+            variant="contained"
+            onClick={deleteHandler}
+          >
             Delete
           </Button>
         </CardActions>

@@ -15,6 +15,7 @@ function ItemList(props) {
           price={item.price}
           quantity={item.quantity}
           name={item.name}
+          type={props.itemType}
         />
       ))}
     </Grid>

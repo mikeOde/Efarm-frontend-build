@@ -14,7 +14,7 @@ import ProtectedCustomerRoute from "./components/protected-routes/ProtectedFarme
 
 function App() {
   return (
-    
+    // HashRouter is used to solve error 404 caused by Github Pages not supporting Single page apps
     <HashRouter>
       <Route path="/" exact component={RegistrationForm} />
 
@@ -29,7 +29,6 @@ function App() {
       </Route> */}
       <ProtectedCustomerRoute path="/orders" component={Orders} />
       <ProtectedCustomerRoute path="/adoptions" component={Adoptions} />
-      
     </HashRouter>
   );
 }
