@@ -47,7 +47,7 @@ function AddItemForm(props) {
             // window.location.reload();
             
             console.log(response);
-            props.closeAction;
+            props.closeAction();
           }
         })
         .catch((error) => {
