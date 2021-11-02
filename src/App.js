@@ -15,19 +15,19 @@ import ProtectedCustomerRoute from "./components/protected-routes/ProtectedFarme
 function App() {
   return (
     <Switch>
-      <Route path="https://mikeode.github.io/efarm/efarm" exact component={RegistrationForm} />
+      <Route path="/efarm" exact component={RegistrationForm} />
 
-      <ProtectedFarmerRoute path="https://mikeode.github.io/efarm/profile" component={Profile} />
-      <ProtectedFarmerRoute path="https://mikeode.github.io/efarm/dashboard" component={Dashboard} />
-      <ProtectedFarmerRoute path="https://mikeode.github.io/efarm/vegetables" component={Vegetables} />
-      <ProtectedFarmerRoute path="https://mikeode.github.io/efarm/trees" component={Trees} />
-      <ProtectedCustomerRoute path="https://mikeode.github.io/efarm/home" component={Home} />
-      <ProtectedCustomerRoute path="https://mikeode.github.io/efarm/farm/:farmId" component={Farm} />
+      <ProtectedFarmerRoute path="/profile" component={Profile} />
+      <ProtectedFarmerRoute path="/dashboard" component={Dashboard} />
+      <ProtectedFarmerRoute path="/vegetables" component={Vegetables} />
+      <ProtectedFarmerRoute path="/trees" component={Trees} />
+      <ProtectedCustomerRoute path="/home" component={Home} />
+      <ProtectedCustomerRoute path="/farm/:farmId" component={Farm} />
       {/* <Route path="/farm/:farmId">
         <Farm />
       </Route> */}
-      <ProtectedCustomerRoute path="https://mikeode.github.io/efarm/orders" component={Orders} />
-      <ProtectedCustomerRoute path="https://mikeode.github.io/efarm/adoptions" component={Adoptions} />
+      <ProtectedCustomerRoute path="/orders" component={Orders} />
+      <ProtectedCustomerRoute path="/adoptions" component={Adoptions} />
       
     </Switch>
   );
