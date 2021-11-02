@@ -43,7 +43,9 @@ function AddItemForm(props) {
         .then((response) => {
           if (response.data.status) {
             // window.location.reload();
-            // console.log(response);
+            
+            console.log(response);
+            history.push("/vegetables");
           }
         })
         .catch((error) => {
@@ -62,7 +64,8 @@ function AddItemForm(props) {
       .then((response) => {
         if (response.data.status) {
           // window.location.reload();
-          // console.log(response);
+          console.log(response);
+          history.push("/vegetables");
         }
       })
       .catch((error) => {
