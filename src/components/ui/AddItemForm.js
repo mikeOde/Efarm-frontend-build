@@ -42,16 +42,16 @@ function AddItemForm(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            // window.location.reload();
+            window.location.reload();
 
             console.log(response);
-            props.closeAction();
+            // props.closeAction();
           }
         })
         .catch((error) => {
           console.log(error.response.data.errors);
           alert("Invalid data");
-          // window.location.reload();
+          window.location.reload();
         });
     } else {
       api
@@ -63,15 +63,15 @@ function AddItemForm(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            // window.location.reload();
+            window.location.reload();
             console.log(response);
-            props.closeAction();
+            // props.closeAction();
           }
         })
         .catch((error) => {
           console.log(error.response.data.errors);
           alert("Invalid data");
-          // window.location.reload();
+          window.location.reload();
         });
     }
   }
