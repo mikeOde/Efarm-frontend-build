@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import { Avatar, Button, Grid } from "@mui/material";
+import api from "../../service/api";
 
 function ItemCard(props) {
   function deleteHandler() {
