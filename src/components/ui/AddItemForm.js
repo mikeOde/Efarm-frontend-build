@@ -14,7 +14,7 @@ function AddItemForm(props) {
   const itemPicInputRef = useRef();
   const vegetableApi = props.itemData.isVegetable;  // if it's equal to one, request is coming from the Vegetables.js component
   const history = useHistory();
-  
+
   function addItemHandler(event) {
     event.preventDefault();
 
@@ -47,7 +47,7 @@ function AddItemForm(props) {
             // window.location.reload();
             
             console.log(response);
-            history.push("/vegetables");
+            props.closeAction;
           }
         })
         .catch((error) => {
@@ -67,7 +67,7 @@ function AddItemForm(props) {
         if (response.data.status) {
           // window.location.reload();
           console.log(response);
-          history.push("/vegetables");
+          history.push("/trees");
         }
       })
       .catch((error) => {
