@@ -31,7 +31,7 @@ function Login() {
         if (response.data.user.user_type_id === 1) {
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
-          history.push("/dashboard");
+          history.push("/profile");
           // window.location.reload();
         } else {
           localStorage.setItem("access_token", response.data.access_token);
