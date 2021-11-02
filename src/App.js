@@ -17,17 +17,17 @@ function App() {
     <Switch>
       <Route path="/efarm" exact component={RegistrationForm} />
 
-      <ProtectedFarmerRoute path="efarm/profile" component={Profile} />
-      <ProtectedFarmerRoute path="efarm/dashboard" component={Dashboard} />
-      <ProtectedFarmerRoute path="efarm/vegetables" component={Vegetables} />
-      <ProtectedFarmerRoute path="efarm/trees" component={Trees} />
-      <ProtectedCustomerRoute path="efarm/home" component={Home} />
-      <ProtectedCustomerRoute path="efarm/farm/:farmId" component={Farm} />
+      <ProtectedFarmerRoute path="/efarm/profile" component={Profile} />
+      <ProtectedFarmerRoute path="/efarm/dashboard" component={Dashboard} />
+      <ProtectedFarmerRoute path="/efarm/vegetables" component={Vegetables} />
+      <ProtectedFarmerRoute path="/efarm/trees" component={Trees} />
+      <ProtectedCustomerRoute path="/efarm/home" component={Home} />
+      <ProtectedCustomerRoute path="/efarm/farm/:farmId" component={Farm} />
       {/* <Route path="/farm/:farmId">
         <Farm />
       </Route> */}
-      <ProtectedCustomerRoute path="efarm/orders" component={Orders} />
-      <ProtectedCustomerRoute path="efarm/adoptions" component={Adoptions} />
+      <ProtectedCustomerRoute path="/efarm/orders" component={Orders} />
+      <ProtectedCustomerRoute path="/efarm/adoptions" component={Adoptions} />
       
     </Switch>
   );
