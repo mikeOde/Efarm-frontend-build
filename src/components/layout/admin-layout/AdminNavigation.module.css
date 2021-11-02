@@ -1,0 +1,34 @@
+.logoutLink{
+  color: red;
+}
+.logoutLink:hover{
+  color: red;
+}
+
+.navList {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #ffffff;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  margin-right: 8%;
+}
+
+.navList:hover,
+.navList a:active,
+.navList a.active {
+  color: #EB961E;
+}
+
+.NavBrand {
+  padding-right: 1rem;
+}
+
+.profileLink {
+  text-decoration: none;
+  color: #000000;
+}
+
+.profileLink:hover {
+  color: #EB961E;
+}

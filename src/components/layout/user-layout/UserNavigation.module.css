@@ -1,0 +1,20 @@
+.navList {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #ffffff;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  margin-right: 12%;
+}
+
+.navList:hover,
+.navList a:active,
+.navList a.active {
+  color: #EB961E;
+}
+
+.NavBrand {
+  padding-right: 3rem;
+}
+
+

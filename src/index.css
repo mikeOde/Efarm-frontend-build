@@ -1,0 +1,80 @@
+body {
+  background-color: #f5f5f5 !important;
+}
+
+.dropdown-toggle {
+  color: white !important;
+  padding-left: 0px !important;
+  margin-right: -13px !important;
+}
+
+.dropdown-toggle:hover {
+  color: #f2ab50 !important;
+}
+
+.MuiAppBar-root {
+  background-color: #516c66 !important;
+}
+
+.MuiAvatar-root {
+  height: 30px !important;
+  border-radius: 7px !important;
+  padding: 0px 23px !important;
+}
+
+.MuiBox-root {
+  background-color: #f5f5f5 !important;
+  padding: 0px !important;
+}
+
+.MuiCardActions-root {
+  padding: 8px 16px !important;
+  margin-bottom: 8px;
+}
+
+.MuiCardContent-root {
+  padding-top: 0 !important;
+  min-height: 70px !important;
+  max-width: inherit !important;
+}
+
+.MuiCardHeader-action {
+  margin: 0px !important;
+  min-width: 45px !important;
+}
+
+/* .MuiCardHeader-title {
+  color: #72B750 !important;
+} */
+
+.MuiCardMedia-img {
+  height: 15em;
+}
+
+.MuiGrid-container {
+  margin-bottom: 15px !important;
+}
+
+.MuiGrid-root {
+  padding-top: 25px !important ;
+  padding-bottom: 0px !important;
+}
+
+.MuiTabs-indicator {
+  background-color: #f2ab50 !important;
+}
+
+.MuiTabs-root {
+  color: #f2ab50 !important;
+}
+
+.nav-bg {
+  min-height: 80px;
+  background-color: #516c66;
+  box-shadow: 0 8px 8px 0 #888888;
+}
+
+.profileCard {
+  padding: 0px !important;
+}
+
