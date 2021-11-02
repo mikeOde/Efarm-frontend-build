@@ -15,19 +15,19 @@ import ProtectedCustomerRoute from "./components/protected-routes/ProtectedFarme
 function App() {
   return (
     <Switch>
-      <Route path="/efarm" exact component={RegistrationForm} />
+      <Route path="/" exact component={RegistrationForm} />
 
-      <ProtectedFarmerRoute path="/efarm/profile" component={Profile} />
-      <ProtectedFarmerRoute path="/efarm/dashboard" component={Dashboard} />
-      <ProtectedFarmerRoute path="/efarm/vegetables" component={Vegetables} />
-      <ProtectedFarmerRoute path="/efarm/trees" component={Trees} />
-      <ProtectedCustomerRoute path="/efarm/home" component={Home} />
-      <ProtectedCustomerRoute path="/efarm/farm/:farmId" component={Farm} />
+      <ProtectedFarmerRoute path="/profile" component={Profile} />
+      <ProtectedFarmerRoute path="/dashboard" component={Dashboard} />
+      <ProtectedFarmerRoute path="/vegetables" component={Vegetables} />
+      <ProtectedFarmerRoute path="/trees" component={Trees} />
+      <ProtectedCustomerRoute path="/home" component={Home} />
+      <ProtectedCustomerRoute path="/farm/:farmId" component={Farm} />
       {/* <Route path="/farm/:farmId">
         <Farm />
       </Route> */}
-      <ProtectedCustomerRoute path="/efarm/orders" component={Orders} />
-      <ProtectedCustomerRoute path="/efarm/adoptions" component={Adoptions} />
+      <ProtectedCustomerRoute path="/orders" component={Orders} />
+      <ProtectedCustomerRoute path="/adoptions" component={Adoptions} />
       
     </Switch>
   );
