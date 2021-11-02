@@ -18,7 +18,7 @@ function App() {
       <Route path="/efarm" exact component={RegistrationForm} />
 
       <ProtectedFarmerRoute path="/profile" component={Profile} />
-      <Route path="/dashboard" component={Dashboard} />
+      <ProtectedFarmerRoute path="/dashboard" component={Dashboard} />
       <ProtectedFarmerRoute path="/vegetables" component={Vegetables} />
       <ProtectedFarmerRoute path="/trees" component={Trees} />
       <ProtectedCustomerRoute path="/home" component={Home} />
