@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import Dashboard from "./pages/admin-pages/Dashboard";
 import Profile from "./pages/admin-pages/Profile";
 import Trees from "./pages/admin-pages/Trees";
@@ -14,7 +14,8 @@ import ProtectedCustomerRoute from "./components/protected-routes/ProtectedFarme
 
 function App() {
   return (
-    <Switch>
+    
+    <HashRouter>
       <Route path="/" exact component={RegistrationForm} />
 
       <ProtectedFarmerRoute path="/profile" component={Profile} />
@@ -29,7 +30,7 @@ function App() {
       <ProtectedCustomerRoute path="/orders" component={Orders} />
       <ProtectedCustomerRoute path="/adoptions" component={Adoptions} />
       
-    </Switch>
+    </HashRouter>
   );
 }
 
