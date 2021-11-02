@@ -5,7 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter basename="efarm">
+  <BrowserRouter basename="/efarm">
     <App />
   </BrowserRouter>,
   document.getElementById("root")
