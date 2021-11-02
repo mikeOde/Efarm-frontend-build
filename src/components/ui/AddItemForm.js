@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useRef } from "react";
-import { useHistory } from "react-router-dom";
 import { IconButton } from "@mui/material";
 import classes from "./AddItemForm.module.css";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
@@ -12,8 +11,7 @@ function AddItemForm(props) {
   const itemPriceInputRef = useRef();
   const itemDescriptionInputRef = useRef();
   const itemPicInputRef = useRef();
-  const vegetableApi = props.itemData.isVegetable;  // if it's equal to one, request is coming from the Vegetables.js component
-  const history = useHistory();
+  const vegetableApi = props.itemData.isVegetable; // if it's equal to one, request is coming from the Vegetables.js component
 
   function addItemHandler(event) {
     event.preventDefault();
@@ -45,7 +43,7 @@ function AddItemForm(props) {
         .then((response) => {
           if (response.data.status) {
             // window.location.reload();
-            
+
             console.log(response);
             props.closeAction();
           }
@@ -57,24 +55,24 @@ function AddItemForm(props) {
         });
     } else {
       api
-      .addTree(addItemData, {
-        headers: {
-          Accept: "application/json",
-          "content-type": "application/json",
-        },
-      })
-      .then((response) => {
-        if (response.data.status) {
+        .addTree(addItemData, {
+          headers: {
+            Accept: "application/json",
+            "content-type": "application/json",
+          },
+        })
+        .then((response) => {
+          if (response.data.status) {
+            // window.location.reload();
+            console.log(response);
+            props.closeAction();
+          }
+        })
+        .catch((error) => {
+          console.log(error.response.data.errors);
+          alert("Invalid data");
           // window.location.reload();
-          console.log(response);
-          history.push("/trees");
-        }
-      })
-      .catch((error) => {
-        console.log(error.response.data.errors);
-        alert("Invalid data");
-        // window.location.reload();
-      });
+        });
     }
   }
   return (
