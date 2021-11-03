@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Button, Grid, Paper, TextField } from "@mui/material";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -14,7 +14,6 @@ function Signup() {
   const lastNameInputRef = useRef();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  const [errors, setErrors] = useState([]);
 
   function signupHandler(event) {
     event.preventDefault();
@@ -29,7 +28,7 @@ function Signup() {
       email: enteredEmail,
       password: enteredPassword,
     };
-    console.log(signupData);
+
     api
       .checkSignup(signupData, {
         headers: {
@@ -43,10 +42,9 @@ function Signup() {
         }
       })
       .catch((error) => {
-        console.log(error.response.data.errors);
+        console.log(error);
         if (enteredEmail === "" || enteredPassword === "") {
-          setErrors(error.response.data.errors);
-          console.log(errors);
+          alert("Please Enter your information");
         } else {
           alert("Email exists already");
         }
@@ -114,12 +112,12 @@ function Signup() {
             onChange={handleChange}
           >
             <FormControlLabel
-              value="0"       // 0 for customers
+              value="0" // 0 for customers
               control={<Radio color="success" size="small" />}
               label="Customer"
             />
             <FormControlLabel
-              value="1"       // 1 for farmers
+              value="1" // 1 for farmers
               control={<Radio color="success" size="small" />}
               label="Farmer"
             />

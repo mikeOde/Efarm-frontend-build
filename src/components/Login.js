@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { Grid, Paper, TextField, Button } from "@mui/material";
 import loginLogo from "./images/loginLogo.png";
@@ -9,7 +9,6 @@ function Login() {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const history = useHistory();
-  const [errors, setErrors] = useState([]);
 
   function loginHandler(event) {
     event.preventDefault();
@@ -19,7 +18,7 @@ function Login() {
       email: enteredEmail,
       password: enteredPassword,
     };
-    console.log(loginData);
+
     api
       .checkLogin(loginData, {
         headers: {
@@ -29,19 +28,25 @@ function Login() {
       })
       .then((response) => {
         if (response.data.user.user_type_id === 1) {
+          const fname = response.data.user.first_name;
+          const lname = response.data.user.last_name;
+          const fullName = fname + " " + lname;
+
+          localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
           history.push("/profile");
         } else {
+          localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
           history.push("/home");
         }
       })
       .catch((error) => {
-        console.log(error.response.data.errors);
+        console.log(error);
         if (enteredEmail === "" || enteredPassword === "") {
-          setErrors(error.response.data.errors);
+          alert("Please Enter your information");
           console.log(errors);
         } else {
           alert("incorrect email or password");
