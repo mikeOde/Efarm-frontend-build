@@ -27,8 +27,7 @@ function ItemCard(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            window.location.reload();
-            console.log(response);
+            props.deleteAction(); //get items api call
           }
         });
     } else {
@@ -41,8 +40,7 @@ function ItemCard(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            window.location.reload();
-            console.log(response);
+            props.deleteAction();
           }
         });
     }

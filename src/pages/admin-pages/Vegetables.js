@@ -46,7 +46,11 @@ function Vegetables() {
 
   return (
     <AdminLayout>
-      <ItemList items={fetchedVegetables} itemType={formData.isVegetable} />
+      <ItemList
+        items={fetchedVegetables}
+        itemType={formData.isVegetable}
+        getFunction={allVegetables}
+      />
       <AddItemButton data={formData} getFunction={allVegetables} />
     </AdminLayout>
   );

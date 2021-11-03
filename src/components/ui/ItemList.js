@@ -1,8 +1,6 @@
 import { Grid } from "@mui/material";
 import ItemCard from "./ItemCard";
 
-
-
 function ItemList(props) {
   return (
     <Grid container spacing={3}>
@@ -16,6 +14,7 @@ function ItemList(props) {
           quantity={item.quantity}
           name={item.name}
           type={props.itemType}
+          deleteAction={props.getFunction}
         />
       ))}
     </Grid>

@@ -23,7 +23,7 @@ function Trees() {
         window.location.reload();
       });
   };
-  
+
   useEffect(() => {
     allTrees();
   }, [history]);
@@ -44,7 +44,7 @@ function Trees() {
 
   return (
     <AdminLayout>
-      <ItemList items={fetchedTrees} />
+      <ItemList items={fetchedTrees} getFunction={allTrees} />
       <AddItemButton data={formData} getFunction={allTrees} />
     </AdminLayout>
   );
