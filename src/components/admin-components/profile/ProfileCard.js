@@ -33,7 +33,7 @@ function ProfileCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <EditProfileButton />
+          <EditProfileButton editAction={props.getFunction} />
         </CardActions>
       </Card>
     </Grid>

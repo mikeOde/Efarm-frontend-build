@@ -4,8 +4,6 @@ import Modal from "@mui/material/Modal";
 import { Button } from "@mui/material";
 import EditProfileForm from "./EditProfileForm";
 
-
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -17,10 +15,10 @@ const style = {
   borderRadius: "5px",
   boxShadow: 24,
   p: 4,
-  };
+};
 
 function EditProfileButton() {
-    const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -34,7 +32,7 @@ function EditProfileButton() {
       >
         Edit
       </Button>
-      
+
       <Modal
         open={open}
         onClose={handleClose}
@@ -42,7 +40,10 @@ function EditProfileButton() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-           <EditProfileForm action={handleClose}/>
+          <EditProfileForm
+            action={handleClose}
+            submitAction={props.editAction}
+          />
         </Box>
       </Modal>
     </div>

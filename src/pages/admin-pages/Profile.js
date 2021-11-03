@@ -6,9 +6,11 @@ import api from "../../service/api";
 function Profile() {
   const [fetchedProfileData, setFetchedProfileData] = useState([]);
   const [fetchedProfileOwner, setFetchedProfileOwner] = useState("");
-  useEffect(() => {
-    const profileData = () => {
-      api.getFarmerProfile().then((response) => {
+
+  const profileData = () => {
+    api
+      .getFarmerProfile()
+      .then((response) => {
         console.log(response);
         setFetchedProfileData(response.data[0]);
         setFetchedProfileOwner(response.data.owner_name);
@@ -17,7 +19,8 @@ function Profile() {
       .catch((error) => {
         console.log(error);
       });
-    };
+  };
+  useEffect(() => {
     profileData();
   }, []);
   console.log(fetchedProfileData);
@@ -32,6 +35,7 @@ function Profile() {
         image={fetchedProfileData ? fetchedProfileData.image : "Image"}
         location={fetchedProfileData ? fetchedProfileData.location : "Location"}
         owner={fetchedProfileOwner}
+        getFunction={profileData}
       />
     </AdminLayout>
   );
