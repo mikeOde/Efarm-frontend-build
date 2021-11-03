@@ -17,7 +17,6 @@ function ItemCard(props) {
       id: itemId,
     };
     if (props.type === "1") {
-      console.log("vegetable");
       api
         .deleteVegetable(deleteItemData, {
           headers: {

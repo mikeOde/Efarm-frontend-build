@@ -14,7 +14,6 @@ function Trees() {
     api
       .getFarmerTrees()
       .then((response) => {
-        console.log(response);
         setFetchedTrees(response.data);
       })
       .catch((error) => {

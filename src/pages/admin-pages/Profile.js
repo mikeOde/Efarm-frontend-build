@@ -11,7 +11,6 @@ function Profile() {
     api
       .getFarmerProfile()
       .then((response) => {
-        console.log(response);
         setFetchedProfileData(response.data[0]);
         setFetchedProfileOwner(response.data.owner_name);
       })
@@ -23,7 +22,6 @@ function Profile() {
   useEffect(() => {
     profileData();
   }, []);
-  console.log(fetchedProfileData);
 
   return (
     <AdminLayout>

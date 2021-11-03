@@ -14,7 +14,6 @@ function Vegetables() {
     api
       .getFarmerVegetables()
       .then((response) => {
-        console.log(response);
         setFetchedVegetables(response.data);
       })
       .catch((error) => {
@@ -27,7 +26,6 @@ function Vegetables() {
   useEffect(() => {
     allVegetables();
   }, [history]);
-  console.log(fetchedVegetables);
 
   const formData = {
     title: "ADD VEGETABLES",
