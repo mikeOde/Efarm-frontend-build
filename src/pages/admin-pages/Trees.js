@@ -9,21 +9,22 @@ import api from "../../service/api";
 function Trees() {
   const history = useHistory();
   const [fetchedTrees, setFetchedTrees] = useState([]);
-  useEffect(() => {
-    const allTrees = () => {
-      api
-        .getFarmerTrees()
-        .then((response) => {
-          console.log(response);
-          setFetchedTrees(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-          history.push("/");
-          window.location.reload();
-        });
-    };
 
+  const allTrees = () => {
+    api
+      .getFarmerTrees()
+      .then((response) => {
+        console.log(response);
+        setFetchedTrees(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        history.push("/");
+        window.location.reload();
+      });
+  };
+  
+  useEffect(() => {
     allTrees();
   }, [history]);
 
@@ -44,7 +45,7 @@ function Trees() {
   return (
     <AdminLayout>
       <ItemList items={fetchedTrees} />
-      <AddItemButton data={formData} getFunction={allVegetables} />
+      <AddItemButton data={formData} getFunction={allTrees} />
     </AdminLayout>
   );
 }

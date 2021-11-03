@@ -7,26 +7,24 @@ import AdminLayout from "../../components/layout/admin-layout/AdminLayout";
 import api from "../../service/api";
 
 function Vegetables() {
-  
-    
   const history = useHistory();
   const [fetchedVegetables, setFetchedVegetables] = useState([]);
 
-  useEffect(() => {
-    const allVegetables = () => {
-      api
-        .getFarmerVegetables()
-        .then((response) => {
-          console.log(response);
-          setFetchedVegetables(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-          history.push("/");
-          window.location.reload();
-        });
-    };
+  const allVegetables = () => {
+    api
+      .getFarmerVegetables()
+      .then((response) => {
+        console.log(response);
+        setFetchedVegetables(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        history.push("/");
+        window.location.reload();
+      });
+  };
 
+  useEffect(() => {
     allVegetables();
   }, [history]);
   console.log(fetchedVegetables);
@@ -43,7 +41,7 @@ function Vegetables() {
     descriptionLabel: "Description",
     descriptionPlaceHolder: "Insert a brief description",
     buttonLabel: "ADD VEGETABLE",
-    isVegetable: "1",    //to be used as a condition in the addItemForm.js 
+    isVegetable: "1", //to be used as a condition in the addItemForm.js
   };
 
   return (
