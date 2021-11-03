@@ -27,11 +27,11 @@ function Login() {
         },
       })
       .then((response) => {
+        const fname = response.data.user.first_name;
+        const lname = response.data.user.last_name;
+        const fullName = fname + " " + lname;
+        
         if (response.data.user.user_type_id === 1) {
-          const fname = response.data.user.first_name;
-          const lname = response.data.user.last_name;
-          const fullName = fname + " " + lname;
-
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
@@ -47,7 +47,6 @@ function Login() {
         console.log(error);
         if (enteredEmail === "" || enteredPassword === "") {
           alert("Please Enter your information");
-          console.log(errors);
         } else {
           alert("incorrect email or password");
         }
