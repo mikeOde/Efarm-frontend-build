@@ -6,7 +6,7 @@ import FarmList from "../../components/user-components/farms/FarmList";
 import api from "../../service/api";
 
 function Home() {
-  onst [fetchedFarms, setFetchedFarms] = useState([]);
+  const [fetchedFarms, setFetchedFarms] = useState([]);
   const history = useHistory();
 
   const allFarms = () => {
