@@ -32,12 +32,10 @@ function Login() {
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
           history.push("/profile");
-          // window.location.reload();
         } else {
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
           history.push("/home");
-          // window.location.reload();
         }
       })
       .catch((error) => {

@@ -49,7 +49,7 @@ function AddItemButton(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <AddItemForm itemData={props.data} closeAction={handleClose} />
+          <AddItemForm itemData={props.data} closeAction={handleClose} addAction={props.getFunction} />
         </Box>
       </Modal>
     </div>

@@ -44,7 +44,7 @@ function Trees() {
   return (
     <AdminLayout>
       <ItemList items={fetchedTrees} />
-      <AddItemButton data={formData} />
+      <AddItemButton data={formData} getFunction={allVegetables} />
     </AdminLayout>
   );
 }

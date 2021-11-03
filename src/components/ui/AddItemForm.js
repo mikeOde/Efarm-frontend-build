@@ -42,16 +42,13 @@ function AddItemForm(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            window.location.reload();
-
-            console.log(response);
-            // props.closeAction();
+            props.addAction(); //allVegetables api call
+            props.closeAction(); //closes the Modal
           }
         })
         .catch((error) => {
           console.log(error.response.data.errors);
           alert("Invalid data");
-          window.location.reload();
         });
     } else {
       api
@@ -63,15 +60,13 @@ function AddItemForm(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            window.location.reload();
-            console.log(response);
-            // props.closeAction();
+            props.addAction(); //allTrees api call
+            props.closeAction(); //closes the Modal
           }
         })
         .catch((error) => {
           console.log(error.response.data.errors);
           alert("Invalid data");
-          window.location.reload();
         });
     }
   }
