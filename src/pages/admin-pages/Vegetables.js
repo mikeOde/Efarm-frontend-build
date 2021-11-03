@@ -19,7 +19,6 @@ function Vegetables() {
       .catch((error) => {
         console.log(error);
         history.push("/");
-        window.location.reload();
       });
   };
 

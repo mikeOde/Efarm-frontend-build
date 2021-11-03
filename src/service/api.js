@@ -20,6 +20,7 @@ const api = {
     checkSignup: (signupData) =>
     axios.post(`${BASE_URL}/register`, signupData),
 
+    //Farmer APIs
     getFarmerVegetables: () =>
     axios.get(`${BASE_URL}/get_vegetables`, token),
 
@@ -43,5 +44,10 @@ const api = {
 
     deleteTree: (deleteItemData) =>
     axios.post(`${BASE_URL}/delete_tree`, deleteItemData, token),
+
+    //Customer APIs
+    getCustomerFarms: () =>
+    axios.get(`${BASE_URL}/user_get_farms`, token),
+
 }
 export default api;

@@ -12,7 +12,7 @@ function FarmList(props) {
           image={farm.image}
           description={farm.description}
           name={farm.name}
-          owner={farm.owner}
+          owner={farm.first_name + " " + farm.last_name}
         />
       ))}
     </Grid>
