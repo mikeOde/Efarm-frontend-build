@@ -16,10 +16,10 @@ function ProfileCard(props) {
           component="img"
           height="194"
           image={props.image}
-          alt={props.name}
+          alt={props.farm_name}
         />
         <CardHeader
-          title={props.name}
+          title={props.farm_name}
           subheader={props.owner}
           action={
             <Typography style={{ paddingTop: "34px", paddingRight: "15px" }}>

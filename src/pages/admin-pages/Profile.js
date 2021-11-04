@@ -29,7 +29,7 @@ function Profile() {
         description={
           fetchedProfileData ? fetchedProfileData.description : "Description"
         }
-        name={fetchedProfileData ? fetchedProfileData.name : "Farm name"}
+        farm_name={fetchedProfileData ? fetchedProfileData.farm_name : "Farm name"}
         image={fetchedProfileData ? fetchedProfileData.image : "Image"}
         location={fetchedProfileData ? fetchedProfileData.location : "Location"}
         owner={fetchedProfileOwner}

@@ -11,7 +11,8 @@ function FarmList(props) {
           id={farm.id}
           image={farm.image}
           description={farm.description}
-          name={farm.name}
+          farm_name={farm.farm_name}
+          location={farm.location}
           owner={farm.first_name + " " + farm.last_name}
         />
       ))}

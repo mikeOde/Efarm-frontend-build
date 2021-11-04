@@ -18,10 +18,10 @@ function FarmProfile(props) {
           component="img"
           height="194"
           image={props.data.image}
-          alt={props.data.name}
+          alt={props.data.farm_name}
         />
         <CardHeader
-          title={<Typography variant="h3">{props.data.name}</Typography>}
+          title={<Typography variant="h3">{props.data.farm_name}</Typography>}
           subheader={props.data.first_name + " " + props.data.last_name}
           action={
             <Typography style={{ paddingTop: "25px" }}>Tannourine</Typography>

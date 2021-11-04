@@ -20,7 +20,7 @@ function EditProfileForm(props) {
     const enteredFarmDescription = farmDescriptionInputRef.current.value;
 
     const editProfileData = {
-      name: enteredFarmName,
+      farm_name: enteredFarmName,
       location: enterefFarmLocation,
       image: enteredFarmPic,
       description: enteredFarmDescription,
