@@ -67,7 +67,7 @@ function FarmProducts(props) {
   const treeData = {
     owner_id: props.farmId,
   };
-  console.log(treeData);
+
   const allTrees = () => {
     api
       .getCustomerTrees(treeData, {
@@ -77,11 +77,9 @@ function FarmProducts(props) {
         },
       })
       .then((response) => {
-        console.log(response);
         setFetchedTrees(response.data);
       })
       .catch((error) => {
-        console.log(error);
         history.push("/");
       });
   };
@@ -105,11 +103,9 @@ function FarmProducts(props) {
         },
       })
       .then((response) => {
-        console.log(response);
         setFetchedVegetables(response.data);
       })
       .catch((error) => {
-        console.log(error);
         history.push("/");
       });
   };
