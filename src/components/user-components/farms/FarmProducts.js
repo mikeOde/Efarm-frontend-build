@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
@@ -10,6 +12,9 @@ import Box from "@mui/material/Box";
 import { Grid } from "@mui/material";
 import TreeCard from "../trees/TreeCard";
 import VegetableCard from "../vegetables/VegetableCard";
+import api from "../../../service/api";
+
+//TabPanel configuration
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -23,7 +28,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography component={'div'}>{children}</Typography>
+          <Typography component={"div"}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -42,6 +47,8 @@ function a11yProps(index) {
     "aria-controls": `full-width-tabpanel-${index}`,
   };
 }
+
+//component function
 function FarmProducts(props) {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -54,89 +61,65 @@ function FarmProducts(props) {
     setValue(index);
   };
 
-  const trees = [
-    {
-      id: "1",
-      name: "Apple trees",
-      image:
-        "https://www.nature-and-garden.com/wp-content/uploads/sites/4/2018/10/apple-tree.jpg",
-      price: "$25",
-      description:
-        "These Apple trees are raised outdoors and fed organic fertilizers only",
-      quantity: "24",
-    },
-    {
-      id: "2",
-      name: "Cherry trees",
-      image:
-        "https://gardenerspath.com/wp-content/uploads/2019/07/How-to-Grow-and-Care-for-Fruiting-Cherry-Trees-Cover.jpg",
-      price: "$27",
-      description:
-        "National Cherry trees outdoor drown on 1500m elevation with minimum pesticides",
-      quantity: "13",
-    },
-    {
-      id: "3",
-      name: "Peach trees",
-      image:
-        "https://www.garden.eco/wp-content/uploads/2018/06/how-to-grow-a-peach-tree.jpg",
-      price: "$25",
-      description: "Medium sized potatoes, with no additional fertilizers",
-      quantity: "37",
-    },
-    {
-      id: "4",
-      name: "Olive trees",
-      image: "https://www.trees.com/wp-content/uploads/2019/11/olive-tree.jpg",
-      price: "$12",
-      description: "Round reddish onions that are fertilizer fed",
-      quantity: "70",
-    },
-  ];
+  //obtaining farm trees
+  const [fetchedTrees, setFetchedTrees] = useState([]);
+  const history = useHistory();
+  const treeData = {
+    owner_id: props.farmId,
+  };
+  console.log(treeData);
+  const allTrees = () => {
+    api
+      .getCustomerTrees(treeData, {
+        headers: {
+          Accept: "application/json",
+          "content-type": "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        setFetchedTrees(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        history.push("/");
+      });
+  };
 
-  const vegetables = [
-    {
-      id: "1",
-      name: "Cucumbers",
-      image:
-        "https://cdn.plantssparkjoy.com/wp-content/uploads/2021/09/02071046/growing-cucumbers-with-plants-spark-joy.jpeg",
-      price: "$12",
-      description:
-        "These Cucumbers are raised outdoors and fed organic fertilizers only",
-      quantity: "5kg",
-    },
-    {
-      id: "2",
-      name: "Tomatoes",
-      image:
-        "https://www.almanac.com/sites/default/files/image_nodes/tomatoes_helios4eos_gettyimages-edit.jpeg",
-      price: "$15",
-      description:
-        "National tomatoes outdoor drown on 1500m elevation with minimum pesticides",
-      quantity: "4kg",
-    },
-    {
-      id: "3",
-      name: "Potatoes",
-      image:
-        "https://www.vanmeuwen.com/static-images/master/static-images/how-to-grow-potatoes/how-to-plant-grow-potatoes.jpg",
-      price: "$10",
-      description: "Medium sized potatoes, with no additional fertilizers",
-      quantity: "10kg",
-    },
-    {
-      id: "4",
-      name: "Onions",
-      image:
-        "https://jainsusa.com/wp-content/uploads/2015/02/5tips_to_grow_great_onions.jpg",
-      price: "$12",
-      description: "Round reddish onions that are fertilizer fed",
-      quantity: "7kg",
-    },
-  ];
+  useEffect(() => {
+    allTrees();
+  }, [history]);
+
+  // //obtaining farm vegetables
+  const [fetchedVegetables, setFetchedVegetables] = useState([]);
+  const vegetableData = {
+    owner_id: props.farmId,
+  };
+  console.log(vegetableData);
+  const allVegetables = () => {
+    api
+      .getCustomerVegetables(vegetableData, {
+        headers: {
+          Accept: "application/json",
+          "content-type": "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        setFetchedVegetables(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        history.push("/");
+      });
+  };
+
+  useEffect(() => {
+    allVegetables();
+  }, [history]);
 
   return (
-    <Box sx={{ bgcolor: "background.black", width: "100%",}}>
+    <Box sx={{ bgcolor: "background.black", width: "100%" }}>
       <AppBar position="sticky">
         <Tabs
           value={value}
@@ -154,11 +137,10 @@ function FarmProducts(props) {
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
         onChangeIndex={handleChangeIndex}
-        
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
           <Grid container spacing={3}>
-            {trees.map((tree) => (
+            {fetchedTrees.map((tree) => (
               <TreeCard
                 key={tree.id}
                 id={tree.id}
@@ -173,7 +155,7 @@ function FarmProducts(props) {
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           <Grid container spacing={3}>
-            {vegetables.map((vegetable) => (
+            {fetchedVegetables.map((vegetable) => (
               <VegetableCard
                 key={vegetable.id}
                 id={vegetable.id}
