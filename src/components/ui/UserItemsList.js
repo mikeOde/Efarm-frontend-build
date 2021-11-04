@@ -37,8 +37,12 @@ function UserItemsList(props) {
               <CardContent
                 sx={{ flex: "1 0 auto", backgroundColor: "#ffffff" }}
               >
-                <Typography component="div" style={{color: "#516c66"}} variant="h6">
-                  {item.farm}
+                <Typography
+                  component="div"
+                  style={{ color: "#516c66" }}
+                  variant="h6"
+                >
+                  {item.farm_name}
                 </Typography>
                 <Typography
                   variant="body1"
