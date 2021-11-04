@@ -60,5 +60,8 @@ const api = {
 
     orderVegetable: (vegetableOrderData) =>
     axios.post(`${BASE_URL}/user_order_vegetables`, vegetableOrderData, token),
+
+    getCustomerOrders: () =>
+    axios.get(`${BASE_URL}/user_get_orders`, token),
 }
 export default api;
