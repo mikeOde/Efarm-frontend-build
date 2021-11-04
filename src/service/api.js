@@ -54,5 +54,11 @@ const api = {
 
     getCustomerVegetables: (vegetableData) =>
     axios.post(`${BASE_URL}/user_get_vegetables`, vegetableData, token),
+
+    adoptTree: (treeAdoptionData) =>
+    axios.post(`${BASE_URL}/user_adopt_trees`, treeAdoptionData, token),
+
+    orderVegetable: (vegetableOrderData) =>
+    axios.post(`${BASE_URL}/user_order_vegetables`, vegetableOrderData, token),
 }
 export default api;
