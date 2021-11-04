@@ -21,9 +21,9 @@ function FarmCard(props) {
     <Grid item xs={12} sm={6} lg={4}>
       <Card elevation={7}>
         <CardActionArea key={props.id} onClick={renderFarm}>
-          <CardMedia component="img" image={props.image} alt={props.name} />
+          <CardMedia component="img" image={props.image} alt={props.farm_name} />
           <CardHeader
-            title={props.name}
+            title={props.farm_name}
             subheader={props.owner}
             action={
               <Typography style={{ paddingTop: "34px" }}>Tannourine</Typography>
