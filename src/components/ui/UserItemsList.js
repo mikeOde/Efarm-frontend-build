@@ -24,7 +24,7 @@ function UserItemsList(props) {
               <CardHeader
                 sx={{ backgroundColor: "#ffffff" }}
                 title={item.name}
-                subheader={item.price}
+                subheader={"$" + props.price}
                 action={
                   <Avatar
                     sx={{ bgcolor: "#F2AB50", marginTop: "70%" }}
