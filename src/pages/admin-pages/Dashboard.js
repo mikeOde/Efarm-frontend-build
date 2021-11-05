@@ -4,37 +4,37 @@ import TotalCard from "../../components/admin-components/dashboard/TotalCard";
 import AdminLayout from "../../components/layout/admin-layout/AdminLayout";
 
 const treesNumbersData = {
-  title: "Total adoptions number",
+  title: "Total",
   total: "198",
   subtitle: "Trees",
   body: "Total number of trees adopted",
 };
 const treesEarningsData = {
-  title: "Total adoptions earnings",
+  title: "Total",
   total: "500",
   subtitle: "USD",
   body: "Total earnings of trees adopted",
 };
 const VegetablesNumbersData = {
-  title: "Total orders",
+  title: "Total",
   total: "95",
   subtitle: "Boxes",
   body: "Total number of boxes ordered",
 };
 const VegetablesEarningsData = {
-  title: "Total orders earnings",
+  title: "Total",
   total: "245",
   subtitle: "USD",
-  body: "Total earnings of vegetables adopted",
+  body: "Total earnings of boxes ordered",
 };
 
 const treesChartData = {
   chartData: [
     ["Trees", "Adoptions"],
-    ["Apple Trees", 23],
-    ["Peach Trees", 15],
-    ["Cherry Trees", 50],
-    ["Olive Trees", 35],
+    ["Apple", 23],
+    ["Peach", 15],
+    ["Cherry", 50],
+    ["Olive", 35],
   ],
   title: "My trees adoptions",
 };
@@ -42,10 +42,10 @@ const treesChartData = {
 const vegetablesChartData = {
   chartData: [
     ["Vegetables", "Boxes"],
-    ["Tomato boxes", 25],
-    ["Cucumber boxes", 45],
-    ["Potato Boxes", 13],
-    ["Onion Boxes", 7],
+    ["Tomato", 25],
+    ["Cucumber", 45],
+    ["Potato", 13],
+    ["Onion", 7],
   ],
   title: "My vegetables adoptions",
 };
