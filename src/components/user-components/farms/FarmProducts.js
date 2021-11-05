@@ -93,7 +93,7 @@ function FarmProducts(props) {
   const vegetableData = {
     owner_id: props.farmId,
   };
-  console.log(vegetableData);
+
   const allVegetables = () => {
     api
       .getCustomerVegetables(vegetableData, {

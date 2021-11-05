@@ -10,7 +10,6 @@ import React from "react";
 import classes from "./FarmProfile.module.css";
 
 function FarmProfile(props) {
-  console.log(props.data);
   return (
     <Grid item xs={12}>
       <Card className={classes.profileCard}>

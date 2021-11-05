@@ -14,7 +14,6 @@ function VegetableCard(props) {
     const vegetableOrderData = {
       vegetable_id: props.id,
     };
-    console.log(vegetableOrderData);
 
     api
       .orderVegetable(vegetableOrderData, {
@@ -25,7 +24,6 @@ function VegetableCard(props) {
       })
       .then((response) => {
         if (response.data.status) {
-          console.log(response);
           alert("Vegetable was successfully ordered");
         }
       })

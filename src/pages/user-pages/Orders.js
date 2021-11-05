@@ -13,7 +13,6 @@ function Orders() {
     api
       .getCustomerOrders()
       .then((response) => {
-        console.log(response);
         setFetchedOrders(response.data);
       })
       .catch((error) => {
@@ -21,8 +20,6 @@ function Orders() {
         history.push("/");
       });
   };
-
-  console.log(fetchedOrders);
 
   useEffect(() => {
     allOrders();

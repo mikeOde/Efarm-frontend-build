@@ -14,7 +14,6 @@ function TreeCard(props) {
       const treeAdoptionData = {
         tree_id: props.id,
       };
-      console.log(treeAdoptionData);
   
       api
         .adoptTree(treeAdoptionData, {
@@ -25,7 +24,6 @@ function TreeCard(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            console.log(response);
             alert("Tree was successfully adopted");
           }
         })

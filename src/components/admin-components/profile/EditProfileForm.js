@@ -26,7 +26,6 @@ function EditProfileForm(props) {
       description: enteredFarmDescription,
     };
 
-    console.log(editProfileData);
     api
       .editFarmerProfile(editProfileData, {
         headers: {
