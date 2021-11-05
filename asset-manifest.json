@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/efarm/static/css/main.e1700091.chunk.css",
-    "main.js": "/efarm/static/js/main.ff8316ec.chunk.js",
-    "main.js.map": "/efarm/static/js/main.ff8316ec.chunk.js.map",
+    "main.js": "/efarm/static/js/main.dd9dce5b.chunk.js",
+    "main.js.map": "/efarm/static/js/main.dd9dce5b.chunk.js.map",
     "runtime-main.js": "/efarm/static/js/runtime-main.481d59de.js",
     "runtime-main.js.map": "/efarm/static/js/runtime-main.481d59de.js.map",
     "static/css/2.c1256375.chunk.css": "/efarm/static/css/2.c1256375.chunk.css",
-    "static/js/2.40d5becb.chunk.js": "/efarm/static/js/2.40d5becb.chunk.js",
-    "static/js/2.40d5becb.chunk.js.map": "/efarm/static/js/2.40d5becb.chunk.js.map",
+    "static/js/2.1ee11a13.chunk.js": "/efarm/static/js/2.1ee11a13.chunk.js",
+    "static/js/2.1ee11a13.chunk.js.map": "/efarm/static/js/2.1ee11a13.chunk.js.map",
     "index.html": "/efarm/index.html",
     "static/css/2.c1256375.chunk.css.map": "/efarm/static/css/2.c1256375.chunk.css.map",
     "static/css/main.e1700091.chunk.css.map": "/efarm/static/css/main.e1700091.chunk.css.map",
-    "static/js/2.40d5becb.chunk.js.LICENSE.txt": "/efarm/static/js/2.40d5becb.chunk.js.LICENSE.txt",
+    "static/js/2.1ee11a13.chunk.js.LICENSE.txt": "/efarm/static/js/2.1ee11a13.chunk.js.LICENSE.txt",
     "static/media/loginLogo.bba5023c.png": "/efarm/static/media/loginLogo.bba5023c.png",
     "static/media/navLogo.1bf254b4.png": "/efarm/static/media/navLogo.1bf254b4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.481d59de.js",
     "static/css/2.c1256375.chunk.css",
-    "static/js/2.40d5becb.chunk.js",
+    "static/js/2.1ee11a13.chunk.js",
     "static/css/main.e1700091.chunk.css",
-    "static/js/main.ff8316ec.chunk.js"
+    "static/js/main.dd9dce5b.chunk.js"
   ]
 }
