@@ -6,9 +6,9 @@ import loginLogo from "./images/loginLogo.png";
 import api from "../service/api";
 
 function Login() {
-  localStorage.setItem("user_name", "");
-  localStorage.setItem("access_token", "");
-  localStorage.setItem("user_type", "");
+  // localStorage.setItem("user_name", "");
+  // localStorage.setItem("access_token", "");
+  // localStorage.setItem("user_type", "");
 
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
