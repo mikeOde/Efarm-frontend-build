@@ -42,7 +42,7 @@ function Login() {
           console.log("farmer");
           setTimeout(() => {
             history.push("/profile");
-          }, 2000);
+          }, 1000);
         } else {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
@@ -50,7 +50,7 @@ function Login() {
           console.log("customer");
           setTimeout(() => {
             history.push("/home");
-          }, 2000);
+          }, 1000);
         }
       })
       .catch((error) => {

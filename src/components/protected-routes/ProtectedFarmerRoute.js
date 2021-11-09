@@ -8,7 +8,7 @@ function ProtectedFarmerRoute({ component: Component, ...restOfProps }) {
         <Route
       {...restOfProps}
       render={(props) =>
-        userType === '1' ? <Component {...props} /> : <Redirect to="/" />
+        userType === '0' ? <Component {...props} /> : <Redirect to="/" />
       }
     />
     );
