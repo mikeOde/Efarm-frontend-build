@@ -41,14 +41,14 @@ function Login() {
           localStorage.setItem("user_type", response.data.user.user_type_id);
           setTimeout(() => {
             history.push("/profile");
-          }, 2000);
+          }, 1000);
         } else {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
           setTimeout(() => {
             history.push("/home");
-          }, 2000);
+          }, 1000);
         }
       })
       .catch((error) => {
