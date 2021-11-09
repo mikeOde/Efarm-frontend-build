@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/efarm/static/css/main.f4fbf327.chunk.css",
-    "main.js": "/efarm/static/js/main.d19e02f6.chunk.js",
-    "main.js.map": "/efarm/static/js/main.d19e02f6.chunk.js.map",
+    "main.js": "/efarm/static/js/main.67427411.chunk.js",
+    "main.js.map": "/efarm/static/js/main.67427411.chunk.js.map",
     "runtime-main.js": "/efarm/static/js/runtime-main.8eb5a25a.js",
     "runtime-main.js.map": "/efarm/static/js/runtime-main.8eb5a25a.js.map",
     "static/css/2.133ec0f1.chunk.css": "/efarm/static/css/2.133ec0f1.chunk.css",
@@ -29,6 +29,6 @@
     "static/css/2.133ec0f1.chunk.css",
     "static/js/2.b3ed7286.chunk.js",
     "static/css/main.f4fbf327.chunk.css",
-    "static/js/main.d19e02f6.chunk.js"
+    "static/js/main.67427411.chunk.js"
   ]
 }
