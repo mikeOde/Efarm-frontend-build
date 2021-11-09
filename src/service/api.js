@@ -13,7 +13,6 @@ const token = {
 }
 
 const api = {
-
     checkLogin: (loginData) =>
     axios.post(`${BASE_URL}/login`, loginData),
 
@@ -36,14 +35,23 @@ const api = {
     addVegetable: (addItemData) =>
     axios.post(`${BASE_URL}/add_vegetables`, addItemData, token),
 
+    editVegetable: (editItemData) =>
+    axios.post(`${BASE_URL}/edit_vegetable`, editItemData, token),
+
     deleteVegetable: (deleteItemData) =>
     axios.post(`${BASE_URL}/delete_vegetable`, deleteItemData, token),
 
     addTree: (addItemData) =>
     axios.post(`${BASE_URL}/add_trees`, addItemData, token),
 
+    editTree: (editItemData) =>
+    axios.post(`${BASE_URL}/edit_tree`, editItemData, token),
+
     deleteTree: (deleteItemData) =>
     axios.post(`${BASE_URL}/delete_tree`, deleteItemData, token),
+
+    getCustomers: () =>
+    axios.get(`${BASE_URL}/get_customers`, token),
 
     //Customer APIs
     getCustomerFarms: () =>
@@ -66,5 +74,12 @@ const api = {
 
     getCustomerOrders: () =>
     axios.get(`${BASE_URL}/user_get_orders`, token),
+
+    getAllTrees: () =>
+    axios.get(`${BASE_URL}/get_all_trees`, token),
+
+    getAllVegetables: () =>
+    axios.get(`${BASE_URL}/get_all_vegetables`, token),
 }
+
 export default api;

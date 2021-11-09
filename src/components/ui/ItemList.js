@@ -10,11 +10,15 @@ function ItemList(props) {
           id={item.id}
           image={item.image}
           description={item.description}
+          subtitle={props.data.subtitle}
+          avatar={props.data.avatar}
           price={item.price}
           quantity={item.quantity}
           name={item.name}
           type={props.itemType}
           deleteAction={props.getFunction}
+          editForm={props.editData}
+          editAction={props.getFunction}
         />
       ))}
     </Grid>

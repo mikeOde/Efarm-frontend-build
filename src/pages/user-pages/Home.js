@@ -16,7 +16,7 @@ function Home() {
         setFetchedFarms(response.data);
       })
       .catch((error) => {
-        history.push("/");
+        console.log(error);
       });
   };
 

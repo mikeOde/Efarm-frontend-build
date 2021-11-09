@@ -8,6 +8,10 @@ import api from "../../service/api";
 function Adoptions() {
   const [fetchedAdoptions, setFetchedAdoptions] = useState([]);
   const history = useHistory();
+  const cardData = {
+    subtitle: "Trees number",
+    unit: "",
+  };
 
   const allAdoptions = () => {
     api
@@ -16,7 +20,7 @@ function Adoptions() {
         setFetchedAdoptions(response.data);
       })
       .catch((error) => {
-        history.push("/");
+        console.log(error);
       });
   };
 
@@ -26,7 +30,7 @@ function Adoptions() {
 
   return (
     <UserLayout>
-      <UserItemsList items={fetchedAdoptions} />
+      <UserItemsList items={fetchedAdoptions} data={cardData} />
     </UserLayout>
   );
 }

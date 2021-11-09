@@ -26,12 +26,17 @@ function UserItemsList(props) {
                 title={item.name}
                 subheader={"$" + item.price}
                 action={
-                  <Avatar
-                    sx={{ bgcolor: "#F2AB50", marginTop: "70%" }}
-                    aria-label="recipe"
-                  >
-                    <Typography>{item.quantity}</Typography>
-                  </Avatar>
+                  <div>
+                    <Typography sx={{ marginTop: "10%" }}>
+                      {props.data.subtitle}
+                    </Typography>
+                    <Avatar
+                      sx={{ bgcolor: "#F2AB50", marginTop: "10%" }}
+                      aria-label="recipe"
+                    >
+                      <Typography>{item.quantity}</Typography>
+                    </Avatar>
+                  </div>
                 }
               ></CardHeader>
               <CardContent
@@ -56,7 +61,6 @@ function UserItemsList(props) {
           </Card>
         </Grid>
       ))}
-      ;
     </Grid>
   );
 }

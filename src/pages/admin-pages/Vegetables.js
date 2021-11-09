@@ -18,16 +18,19 @@ function Vegetables() {
       })
       .catch((error) => {
         console.log(error);
-        history.push("/");
       });
   };
-
   useEffect(() => {
     allVegetables();
   }, [history]);
 
+  const cardData = {
+    subtitle: "Box weight",
+    avatar: "kg",
+  };
+
   const formData = {
-    title: "ADD VEGETABLES",
+    title: "VEGETABLES",
     nameLabel: "Vegetable Name",
     namePlaceHolder: "Insert vegetable name",
     quantityLabel: "Box Weight",
@@ -37,7 +40,7 @@ function Vegetables() {
     pictureLabel: "Vegetable Picture",
     descriptionLabel: "Description",
     descriptionPlaceHolder: "Insert a brief description",
-    buttonLabel: "ADD VEGETABLE",
+    buttonLabel: "VEGETABLE",
     isVegetable: "1", //to be used as a condition in the addItemForm.js
   };
 
@@ -45,8 +48,10 @@ function Vegetables() {
     <AdminLayout>
       <ItemList
         items={fetchedVegetables}
+        data={cardData}
         itemType={formData.isVegetable}
         getFunction={allVegetables}
+        editData={formData}
       />
       <AddItemButton data={formData} getFunction={allVegetables} />
     </AdminLayout>

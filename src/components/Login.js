@@ -6,6 +6,10 @@ import loginLogo from "./images/loginLogo.png";
 import api from "../service/api";
 
 function Login() {
+  localStorage.setItem("user_name", "");
+  localStorage.setItem("access_token", "");
+  localStorage.setItem("user_type", "");
+
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const history = useHistory();
@@ -30,17 +34,21 @@ function Login() {
         const fname = response.data.user.first_name;
         const lname = response.data.user.last_name;
         const fullName = fname + " " + lname;
-        
+
         if (response.data.user.user_type_id === 1) {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
-          setTimeout(() => {history.push("/profile");}, 1000);
+          setTimeout(() => {
+            history.push("/profile");
+          }, 2000);
         } else {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
-          setTimeout(() => {history.push("/home");}, 1000);
+          setTimeout(() => {
+            history.push("/home");
+          }, 2000);
         }
       })
       .catch((error) => {

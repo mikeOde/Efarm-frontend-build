@@ -18,31 +18,39 @@ function Trees() {
       })
       .catch((error) => {
         console.log(error);
-        history.push("/");
       });
   };
-
   useEffect(() => {
     allTrees();
   }, [history]);
 
+  const cardData = {
+    subtitle: "Trees number",
+    avatar: "",
+  };
+
   const formData = {
-    title: "ADD TREES",
+    title: "TREES",
     nameLabel: "Tree Name",
     namePlaceHolder: "Insert tree name",
-    quantityLabel: "Available Quantity",
+    quantityLabel: "Trees per adoption",
     quantityPlaceHolder: "Insert number of trees",
-    priceLabel: "Price per tree",
-    pricePlaceHolder: "Insert price per tree",
+    priceLabel: "Adoption price",
+    pricePlaceHolder: "Insert price per adoption",
     pictureLabel: "Tree Picture",
     descriptionLabel: "Description",
     descriptionPlaceHolder: "Insert a brief description",
-    buttonLabel: "ADD TREE",
+    buttonLabel: "TREE",
   };
 
   return (
     <AdminLayout>
-      <ItemList items={fetchedTrees} getFunction={allTrees} />
+      <ItemList
+        items={fetchedTrees}
+        data={cardData}
+        getFunction={allTrees}
+        editData={formData}
+      />
       <AddItemButton data={formData} getFunction={allTrees} />
     </AdminLayout>
   );

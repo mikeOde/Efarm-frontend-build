@@ -2,24 +2,25 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import UserLayout from "../../components/layout/user-layout/UserLayout";
-import UserItemsList from "../../components/ui/UserItemsList";
+import AllProductsList from "../../components/user-components/all-products/AllProductsList";
 import api from "../../service/api";
 
-function Orders() {
-  const [fetchedOrders, setFetchedOrders] = useState([]);
-  console.log(fetchedOrders);
+function AllTrees() {
+  const [fetchedTrees, setFetchedTrees] = useState([]);
   const history = useHistory();
   const cardData = {
-    subtitle: "Box weight",
-    unit: "kg",
+    subtitle: "Trees number",
+    avatar: "",
+    buttonLabel: "ADOPT TREE",
+    isVegetable: "0", //used to differentiate between handleAdoption or handleOrder
   };
 
-  const allOrders = () => {
+  const getTrees = () => {
     api
-      .getCustomerOrders()
+      .getAllTrees()
       .then((response) => {
         console.log(response);
-        setFetchedOrders(response.data);
+        setFetchedTrees(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -27,14 +28,14 @@ function Orders() {
   };
 
   useEffect(() => {
-    allOrders();
+    getTrees();
   }, [history]);
 
   return (
     <UserLayout>
-      <UserItemsList items={fetchedOrders} data={cardData} />
+      <AllProductsList products={fetchedTrees} data={cardData} />
     </UserLayout>
   );
 }
 
-export default Orders;
+export default AllTrees;

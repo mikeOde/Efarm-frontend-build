@@ -10,6 +10,8 @@ function EditProfileForm(props) {
   const farmLocationInputRef = useRef();
   const farmPicInputRef = useRef();
   const farmDescriptionInputRef = useRef();
+  const farmLatitudeInputRef = useRef();
+  const farmLongitudeInputRef = useRef();
 
   function editProfileHandler(event) {
     event.preventDefault();
@@ -18,14 +20,19 @@ function EditProfileForm(props) {
     const enterefFarmLocation = farmLocationInputRef.current.value;
     const enteredFarmPic = farmPicInputRef.current.value;
     const enteredFarmDescription = farmDescriptionInputRef.current.value;
+    const enteredFarmLatitude = farmLatitudeInputRef.current.value;
+    const enteredFarmLongitude = farmLongitudeInputRef.current.value;
 
     const editProfileData = {
       farm_name: enteredFarmName,
       location: enterefFarmLocation,
       image: enteredFarmPic,
       description: enteredFarmDescription,
+      lat: enteredFarmLatitude,
+      lng: enteredFarmLongitude,
     };
 
+    console.log(editProfileData);
     api
       .editFarmerProfile(editProfileData, {
         headers: {
@@ -40,7 +47,7 @@ function EditProfileForm(props) {
         }
       })
       .catch((error) => {
-        console.log(error.response.data.errors);
+        console.log(error);
         alert("Invalid data");
       });
   }
@@ -104,6 +111,26 @@ function EditProfileForm(props) {
             rows="5"
             placeholder="Enter farm description"
             ref={farmDescriptionInputRef}
+          />
+        </div>
+        <div className={classes.control}>
+          <label htmlFor="lat">Latitude</label>
+          <input
+            type="text"
+            required
+            id="lat"
+            placeholder="Enter farm latitude"
+            ref={farmLatitudeInputRef}
+          />
+        </div>
+        <div className={classes.control}>
+          <label htmlFor="lng">Longitude</label>
+          <input
+            type="text"
+            required
+            id="lng"
+            placeholder="Enter farm longitude"
+            ref={farmLongitudeInputRef}
           />
         </div>
         <div className={classes.actions}>

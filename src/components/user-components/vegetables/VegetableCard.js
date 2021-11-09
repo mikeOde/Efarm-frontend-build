@@ -9,7 +9,6 @@ import { Avatar, Button, Grid } from "@mui/material";
 import api from "../../../service/api";
 
 function VegetableCard(props) {
-
   function handleOrder() {
     const vegetableOrderData = {
       vegetable_id: props.id,
@@ -45,9 +44,12 @@ function VegetableCard(props) {
           title={props.name}
           subheader={"$" + props.price}
           action={
-            <Avatar sx={{ bgcolor: "#F2AB50" }} aria-label="recipe">
-              <Typography>{props.quantity}</Typography>
-            </Avatar>
+            <div>
+              <Typography variant="caption">Box weight</Typography>
+              <Avatar sx={{ bgcolor: "#F2AB50" }} aria-label="recipe">
+                <Typography>{props.quantity}kg</Typography>
+              </Avatar>
+            </div>
           }
         ></CardHeader>
         <CardContent>

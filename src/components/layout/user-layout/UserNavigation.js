@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import classes from "./UserNavigation.module.css";
 import { Button } from "@mui/material";
 import navLogo from "../../images/navLogo.png";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 function UserNavigation() {
   let userName = localStorage.getItem("user_name");
@@ -13,7 +14,7 @@ function UserNavigation() {
     <Navbar collapseOnSelect variant="dark" expand="lg" className="nav-bg">
       <Container>
         <Navbar.Brand href="" className={classes.NavBrand}>
-        <img src={navLogo} alt="logo" style={logoStyle} />
+          <img src={navLogo} alt="logo" style={logoStyle} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -21,11 +22,23 @@ function UserNavigation() {
             <Link to="/home" className={classes.navList}>
               Home
             </Link>
+            <Link to="/explore" className={classes.navList}>
+              Explore
+            </Link>
+            <Link to="/all-trees" className={classes.navList}>
+              Trees
+            </Link>
+            <Link to="/all-vegetables" className={classes.navList}>
+              Vegetables
+            </Link>
             <Link to="/adoptions" className={classes.navList}>
               Adoptions
             </Link>
             <Link to="/orders" className={classes.navList}>
               Orders
+            </Link>
+            <Link to="/cart" className={classes.navList}>
+              <ShoppingCartIcon />
             </Link>
           </Nav>
           <NavDropdown title={userName} id="basic-nav-dropdown">

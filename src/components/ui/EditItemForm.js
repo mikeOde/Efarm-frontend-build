@@ -1,40 +1,39 @@
 import * as React from "react";
 import { useRef } from "react";
 import { IconButton } from "@mui/material";
-import classes from "./AddItemForm.module.css";
+import classes from "./EditItemForm.module.css";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import api from "../../service/api";
 
-function AddItemForm(props) {
+function EditItemForm(props) {
+  const vegetableApi = props.editData.isVegetable;
+  const itemId = parseInt(props.itemId);
   const itemNameInputRef = useRef();
   const itemQuantityInputRef = useRef();
   const itemPriceInputRef = useRef();
   const itemDescriptionInputRef = useRef();
-  const itemPicInputRef = useRef();
-  const vegetableApi = props.itemData.isVegetable; // if it's equal to one, request is coming from the Vegetables.js component
 
-  function addItemHandler(event) {
+  console.log(props.editData);
+
+  function editItemHandler(event) {
     event.preventDefault();
 
     const enteredItemName = itemNameInputRef.current.value;
     const enteredItemQuantity = itemQuantityInputRef.current.value;
     const enteredItemPrice = itemPriceInputRef.current.value;
     const enteredItemDescription = itemDescriptionInputRef.current.value;
-    const enteredItemPic = itemPicInputRef.current.value;
-    console.log(vegetableApi);
 
-    const addItemData = {
+    const editItemData = {
+      id: itemId,
       name: enteredItemName,
       quantity: enteredItemQuantity,
       price: enteredItemPrice,
       description: enteredItemDescription,
-      image: enteredItemPic,
     };
-    console.log(addItemData);
-
+    
     if (vegetableApi === "1") {
       api
-        .addVegetable(addItemData, {
+        .editVegetable(editItemData, {
           headers: {
             Accept: "application/json",
             "content-type": "application/json",
@@ -42,8 +41,9 @@ function AddItemForm(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            props.addAction(); //allVegetables api call
-            props.closeAction(); //closes the Modal
+            console.log(response);
+            props.editAction(); //allVegetables api call
+            props.action(); //closes the Modal
           }
         })
         .catch((error) => {
@@ -52,7 +52,7 @@ function AddItemForm(props) {
         });
     } else {
       api
-        .addTree(addItemData, {
+        .editTree(editItemData, {
           headers: {
             Accept: "application/json",
             "content-type": "application/json",
@@ -60,8 +60,8 @@ function AddItemForm(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            props.addAction(); //allTrees api call
-            props.closeAction(); //closes the Modal
+            props.editAction(); //allTrees api call
+            props.action(); //closes the Modal
           }
         })
         .catch((error) => {
@@ -71,15 +71,16 @@ function AddItemForm(props) {
         });
     }
   }
+
   return (
-    <div className={classes.formContainer}>
-      <form className={classes.form} onSubmit={addItemHandler}>
+    <div className={classes.formContainer} onSubmit={editItemHandler}>
+      <form className={classes.form} >
         <div className={classes.formTitle}>
-          <h4>ADD {props.itemData.title}</h4>
+          <h4>EDIT {props.editData.title}</h4>
         </div>
         <div className={classes.closeAction}>
           <IconButton
-            onClick={props.closeAction}
+            onClick={props.action}
             aria-label="close"
             sx={{
               position: "absolute",
@@ -96,33 +97,32 @@ function AddItemForm(props) {
             />
           </IconButton>
         </div>
-
         <div className={classes.control}>
-          <label htmlFor="name">{props.itemData.nameLabel}</label>
+          <label htmlFor="name">{props.editData.nameLabel}</label>
           {/* htmlFor is the equival ent of for in regular html and it points to the id */}
           {/* of the input target */}
           <input
-            placeholder={props.itemData.namePlaceHolder}
             type="text"
             required
             id="name"
+            placeholder={props.editData.namePlaceHolder}
             ref={itemNameInputRef}
           />
         </div>
         <div className={classes.control}>
-          <label htmlFor="quantity">{props.itemData.quantityLabel}</label>
+          <label htmlFor="location">{props.editData.quantityLabel}</label>
           <input
-            placeholder={props.itemData.quantityPlaceHolder}
             type="number"
             required
             id="quantity"
+            placeholder={props.editData.quantityPlaceHolder}
             ref={itemQuantityInputRef}
           />
         </div>
         <div className={classes.control}>
-          <label htmlFor="price">{props.itemData.priceLabel}</label>
+          <label htmlFor="price">{props.editData.priceLabel}</label>
           <input
-            placeholder={props.itemData.pricePlaceHolder}
+            placeholder={props.editData.pricePlaceHolder}
             type="number"
             required
             id="price"
@@ -130,24 +130,20 @@ function AddItemForm(props) {
           />
         </div>
         <div className={classes.control}>
-          <label htmlFor="picture">{props.itemData.pictureLabel}</label>
-          <input type="text" required id="picture" ref={itemPicInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="description">{props.itemData.descriptionLabel}</label>
+          <label htmlFor="description">{props.editData.descriptionLabel}</label>
           <textarea
-            placeholder={props.itemData.descriptionPlaceHolder}
             id="description"
             required
             rows="5"
+            placeholder={props.editData.descriptionPlaceHolder}
             ref={itemDescriptionInputRef}
           />
         </div>
         <div className={classes.actions}>
-          <button type="submit">ADD {props.itemData.buttonLabel}</button>
+          <button type="submit">EDIT {props.editData.buttonLabel}</button>
         </div>
       </form>
     </div>
   );
 }
-export default AddItemForm;
+export default EditItemForm;
