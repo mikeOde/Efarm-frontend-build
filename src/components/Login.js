@@ -34,7 +34,7 @@ function Login() {
         const fname = response.data.user.first_name;
         const lname = response.data.user.last_name;
         const fullName = fname + " " + lname;
-
+        console.log(response);
         if (response.data.user.user_type_id === 1) {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);

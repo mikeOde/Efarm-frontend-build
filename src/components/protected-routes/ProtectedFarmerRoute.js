@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route } from "react-router-dom";
 
-function ProtectedCustomerRoute({ component: Component, ...restOfProps }) {
+function ProtectedFarmerRoute({ component: Component, ...restOfProps }) {
     const userType = localStorage.getItem("user_type");
     console.log(userType);
     return (
@@ -14,4 +14,4 @@ function ProtectedCustomerRoute({ component: Component, ...restOfProps }) {
     );
 }
 
-export default ProtectedCustomerRoute;
+export default ProtectedFarmerRoute;
