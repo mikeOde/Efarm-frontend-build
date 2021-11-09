@@ -3,6 +3,7 @@ import { Redirect, Route } from "react-router-dom";
 
 function ProtectedCustomerRoute({ component: Component, ...restOfProps }) {
     const userType = localStorage.getItem("user_type");
+    console.log(userType);
     return (
         <Route
       {...restOfProps}
