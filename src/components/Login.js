@@ -39,6 +39,7 @@ function Login() {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
+          console.log("farmer");
           setTimeout(() => {
             history.push("/profile");
           }, 1000);
@@ -46,6 +47,7 @@ function Login() {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
+          console.log("customer");
           setTimeout(() => {
             history.push("/home");
           }, 1000);
