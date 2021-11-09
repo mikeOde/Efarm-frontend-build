@@ -7,7 +7,7 @@ function ProtectedCustomerRoute({ component: Component, ...restOfProps }) {
         <Route
       {...restOfProps}
       render={(props) =>
-        userType === '0' ? <Component {...props} /> : <Redirect to="/" />
+        userType === '1' ? <Component {...props} /> : <Redirect to="/" />
       }
     />
     );
