@@ -53,6 +53,18 @@ const api = {
     getCustomers: () =>
     axios.get(`${BASE_URL}/get_customers`, token),
 
+    getTreesChart: () =>
+    axios.get(`${BASE_URL}/trees_chart`, token),
+
+    getVegetablesChart: () =>
+    axios.get(`${BASE_URL}/vegetables_chart`, token),
+
+    getTotalAdoptions: () =>
+    axios.get(`${BASE_URL}/total_adoptions`, token),
+
+    getTotalOrders: () =>
+    axios.get(`${BASE_URL}/total_orders`, token),
+
     //Customer APIs
     getCustomerFarms: () =>
     axios.get(`${BASE_URL}/user_get_farms`, token),

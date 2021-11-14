@@ -4,8 +4,8 @@ import { Chart } from "react-google-charts";
 
 
 function PieChart(props) {
-    let chartData = props.data.chartData;
-    const chartTitle = {title: props.data.title};
+    let chartData = props.data;
+    const chartTitle = {title: props.title};
     console.log(chartData);
   return (
     <Grid item xs={12}>
