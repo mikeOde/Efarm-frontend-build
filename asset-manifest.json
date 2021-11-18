@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/efarm/static/css/main.f4fbf327.chunk.css",
-    "main.js": "/efarm/static/js/main.42fb6834.chunk.js",
-    "main.js.map": "/efarm/static/js/main.42fb6834.chunk.js.map",
+    "main.css": "/efarm/static/css/main.1ab98782.chunk.css",
+    "main.js": "/efarm/static/js/main.c3e0b4e9.chunk.js",
+    "main.js.map": "/efarm/static/js/main.c3e0b4e9.chunk.js.map",
     "runtime-main.js": "/efarm/static/js/runtime-main.8eb5a25a.js",
     "runtime-main.js.map": "/efarm/static/js/runtime-main.8eb5a25a.js.map",
     "static/css/2.133ec0f1.chunk.css": "/efarm/static/css/2.133ec0f1.chunk.css",
-    "static/js/2.850f955c.chunk.js": "/efarm/static/js/2.850f955c.chunk.js",
-    "static/js/2.850f955c.chunk.js.map": "/efarm/static/js/2.850f955c.chunk.js.map",
+    "static/js/2.cbac5d01.chunk.js": "/efarm/static/js/2.cbac5d01.chunk.js",
+    "static/js/2.cbac5d01.chunk.js.map": "/efarm/static/js/2.cbac5d01.chunk.js.map",
     "static/js/3.da17f409.chunk.js": "/efarm/static/js/3.da17f409.chunk.js",
     "static/js/3.da17f409.chunk.js.map": "/efarm/static/js/3.da17f409.chunk.js.map",
     "static/js/4.75df66d5.chunk.js": "/efarm/static/js/4.75df66d5.chunk.js",
@@ -18,8 +18,8 @@
     "static/js/6.ad1a83af.chunk.js.map": "/efarm/static/js/6.ad1a83af.chunk.js.map",
     "index.html": "/efarm/index.html",
     "static/css/2.133ec0f1.chunk.css.map": "/efarm/static/css/2.133ec0f1.chunk.css.map",
-    "static/css/main.f4fbf327.chunk.css.map": "/efarm/static/css/main.f4fbf327.chunk.css.map",
-    "static/js/2.850f955c.chunk.js.LICENSE.txt": "/efarm/static/js/2.850f955c.chunk.js.LICENSE.txt",
+    "static/css/main.1ab98782.chunk.css.map": "/efarm/static/css/main.1ab98782.chunk.css.map",
+    "static/js/2.cbac5d01.chunk.js.LICENSE.txt": "/efarm/static/js/2.cbac5d01.chunk.js.LICENSE.txt",
     "static/media/style.css": "/efarm/static/media/any_pattern.4ec63686.jpg",
     "static/media/loginLogo.bba5023c.png": "/efarm/static/media/loginLogo.bba5023c.png",
     "static/media/navLogo.1bf254b4.png": "/efarm/static/media/navLogo.1bf254b4.png"
@@ -27,8 +27,8 @@
   "entrypoints": [
     "static/js/runtime-main.8eb5a25a.js",
     "static/css/2.133ec0f1.chunk.css",
-    "static/js/2.850f955c.chunk.js",
-    "static/css/main.f4fbf327.chunk.css",
-    "static/js/main.42fb6834.chunk.js"
+    "static/js/2.cbac5d01.chunk.js",
+    "static/css/main.1ab98782.chunk.css",
+    "static/js/main.c3e0b4e9.chunk.js"
   ]
 }
