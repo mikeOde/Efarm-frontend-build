@@ -7,7 +7,6 @@ import api from "../../service/api";
 
 function Orders() {
   const [fetchedOrders, setFetchedOrders] = useState([]);
-  console.log(fetchedOrders);
   const history = useHistory();
   const cardData = {
     subtitle: "Box weight",
@@ -18,7 +17,6 @@ function Orders() {
     api
       .getCustomerOrders()
       .then((response) => {
-        console.log(response);
         setFetchedOrders(response.data);
       })
       .catch((error) => {

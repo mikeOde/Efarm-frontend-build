@@ -9,24 +9,34 @@ body {
   font-family: sans-serif;
 }
 
-.fix-new {
-  font-size: 10px !important; /*we can easly change credit card size*/
-}
-
-
-
-@media screen and (max-width: 840px) {
-  .container {
-    flex-direction: column-reverse;
-  }
-  .form-box {
-    margin-right: 0rem;
-    margin-top: 1rem;
-  }
+.btn {
+  padding: 1rem 1rem;
+  border: 0;
+  background: #72b750;
+  color: #ffffff;
+  width: 100%;
+  font-size: 1.1rem;
+  margin-top: 1rem;
 }
 
 .card-new {
   background: url(./any_pattern.jpg) !important;
+}
+
+.error {
+  background-color: rgb(247, 144, 144);
+}
+
+.fix-new {
+  font-size: 10px !important; /*we can easly change credit card size*/
+}
+
+.flex-wrapper {
+  display: flex;
+}
+
+.flex-wrapper div {
+  margin-right: 2rem;
 }
 
 .form-box {
@@ -47,28 +57,16 @@ body {
   color: #666666;
 }
 
-.btn {
-  padding: 1rem 1rem;
-  border: 0;
-  background: #72b750;
-  color: #ffffff;
-  width: 100%;
-  font-size: 1.1rem;
-  margin-top: 1rem;
-}
-
 .semi {
   width: 50%;
 }
 
-.flex-wrapper {
-  display: flex;
-}
-
-.flex-wrapper div {
-  margin-right: 2rem;
-}
-
-.error {
-  background-color: rgb(247, 144, 144);
+@media screen and (max-width: 840px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .form-box {
+    margin-right: 0rem;
+    margin-top: 1rem;
+  }
 }

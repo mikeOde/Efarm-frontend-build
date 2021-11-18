@@ -23,7 +23,7 @@ function EditItemButton(props) {
   const handleClose = () => setOpen(false);
 
   return (
-    <div style={{width: "100%", marginRight: 10}}>
+    <div style={{ width: "100%", marginRight: 10 }}>
       <Button
         aria-label="edit"
         size="medium"

@@ -13,8 +13,6 @@ function EditItemForm(props) {
   const itemPriceInputRef = useRef();
   const itemDescriptionInputRef = useRef();
 
-  console.log(props.editData);
-
   function editItemHandler(event) {
     event.preventDefault();
 
@@ -30,7 +28,7 @@ function EditItemForm(props) {
       price: enteredItemPrice,
       description: enteredItemDescription,
     };
-    
+
     if (vegetableApi === "1") {
       api
         .editVegetable(editItemData, {
@@ -41,7 +39,6 @@ function EditItemForm(props) {
         })
         .then((response) => {
           if (response.data.status) {
-            console.log(response);
             props.editAction(); //allVegetables api call
             props.action(); //closes the Modal
           }
@@ -65,16 +62,15 @@ function EditItemForm(props) {
           }
         })
         .catch((error) => {
-          console.log(error.response.data.errors);
+          console.log(error);
           alert("Invalid data");
-          window.location.reload();
         });
     }
   }
 
   return (
     <div className={classes.formContainer} onSubmit={editItemHandler}>
-      <form className={classes.form} >
+      <form className={classes.form}>
         <div className={classes.formTitle}>
           <h4>EDIT {props.editData.title}</h4>
         </div>

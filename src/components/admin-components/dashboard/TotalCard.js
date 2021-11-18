@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 import React from "react";
 
 function TotalCard(props) {

@@ -10,16 +10,11 @@ import CreditCard from "../../components/user-components/cart/CreditCard";
 function Cart() {
   const [fetchedAdoptions, setFetchedAdoptions] = useState([]);
   const history = useHistory();
-  //   const cardData = {
-  //     subtitle: "Trees number",
-  //     unit: "",
-  //   };
 
   const allAdoptions = () => {
     api
       .getCustomerAdoptions()
       .then((response) => {
-        console.log(response);
         setFetchedAdoptions(response.data);
       })
       .catch((error) => {
@@ -32,16 +27,11 @@ function Cart() {
   }, [history]);
 
   const [fetchedOrders, setFetchedOrders] = useState([]);
-  //   const cardData = {
-  //     subtitle: "Box weight",
-  //     unit: "kg",
-  //   };
 
   const allOrders = () => {
     api
       .getCustomerOrders()
       .then((response) => {
-        console.log(response);
         setFetchedOrders(response.data);
       })
       .catch((error) => {
@@ -54,7 +44,6 @@ function Cart() {
   }, [history]);
 
   let fetchedCartItems = fetchedAdoptions.concat(fetchedOrders);
-  console.log(fetchedCartItems);
 
   return (
     <UserLayout>

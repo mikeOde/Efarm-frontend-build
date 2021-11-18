@@ -20,14 +20,13 @@ function Map() {
     api
       .getCustomerFarms()
       .then((response) => {
-        console.log(response);
         setFetchedFarms(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  console.log(fetchedFarms);
+
   useEffect(() => {
     allFarms();
   }, [history]);
@@ -42,7 +41,6 @@ function Map() {
           position={{ lat: parseFloat(farm.lat), lng: parseFloat(farm.lng) }}
           onClick={() => {
             setSelectedFarm(farm);
-            console.log(farm);
           }}
         />
       ))}

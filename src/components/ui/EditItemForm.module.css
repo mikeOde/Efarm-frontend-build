@@ -45,12 +45,11 @@
   padding: 1rem;
 }
 
-.formTitle{
-  color:#516c66;
-  padding-bottom: 10px;
-}
-
-.formContainer{
+.formContainer {
   padding: 1% 6%;
 }
 
+.formTitle {
+  color: #516c66;
+  padding-bottom: 10px;
+}

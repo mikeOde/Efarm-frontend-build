@@ -11,7 +11,6 @@ function CartItems(props) {
   const total = props.items.reduce(function (sum, current) {
     return sum + current.price;
   }, 0);
-  console.log(total);
 
   return (
     <Card sx={{ marginTop: "8px" }} elevation={7}>
@@ -46,14 +45,10 @@ function CartItems(props) {
       <List dense sx={{ width: "100%", bgcolor: "#f2ab50" }}>
         <ListItemButton>
           <ListItemText id="total" sx={{ width: "30%", textAlign: "center" }}>
-          <Typography>
-            Total
-            </Typography>
+            <Typography>Total</Typography>
           </ListItemText>
           <ListItemText id="price" sx={{ width: "30%", textAlign: "center" }}>
-            <Typography>
-            ${total}
-            </Typography>
+            <Typography>${total}</Typography>
           </ListItemText>
         </ListItemButton>
       </List>

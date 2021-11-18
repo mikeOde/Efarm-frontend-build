@@ -22,25 +22,25 @@ function AllProductsCard(props) {
       };
 
       api
-      .adoptTree(treeAdoptionData, {
-        headers: {
-          Accept: "application/json",
-          "content-type": "application/json",
-        },
-      })
-      .then((response) => {
-        if (response.data.status) {
-          alert("Tree was successfully adopted");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        .adoptTree(treeAdoptionData, {
+          headers: {
+            Accept: "application/json",
+            "content-type": "application/json",
+          },
+        })
+        .then((response) => {
+          if (response.data.status) {
+            alert("Tree was successfully adopted");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
       const vegetableOrderData = {
         vegetable_id: props.id,
       };
-  
+
       api
         .orderVegetable(vegetableOrderData, {
           headers: {
@@ -56,10 +56,8 @@ function AllProductsCard(props) {
         .catch((error) => {
           console.log(error);
         });
-    };
-    
+    }
   }
-  
 
   return (
     <Grid item xs={12} sm={6} lg={4}>
@@ -77,7 +75,10 @@ function AllProductsCard(props) {
             <div>
               <Typography variant="caption">Trees number</Typography>
               <Avatar sx={{ bgcolor: "#F2AB50" }} aria-label="recipe">
-                <Typography>{props.quantity}{props.avatar}</Typography>
+                <Typography>
+                  {props.quantity}
+                  {props.avatar}
+                </Typography>
               </Avatar>
             </div>
           }

@@ -88,7 +88,7 @@ function FarmProducts(props) {
     allTrees();
   }, [history]);
 
-  // //obtaining farm vegetables
+  //obtaining farm vegetables
   const [fetchedVegetables, setFetchedVegetables] = useState([]);
   const vegetableData = {
     owner_id: props.farmId,

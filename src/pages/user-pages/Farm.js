@@ -34,7 +34,6 @@ function Farm() {
   let farmData = [];
 
   //filtering the farms based on the id.
-  //this could have also been done on the server side
   for (let farm of fetchedFarms) {
     if (farm.id === id) {
       farmData = farm;

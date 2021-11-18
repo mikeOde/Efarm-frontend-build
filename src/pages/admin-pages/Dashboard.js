@@ -58,7 +58,6 @@ function Dashboard() {
       .then((response) => {
         setFetchedTotalAdoptions(response.data);
       })
-      // The routes are already protected
       .catch((error) => {
         console.log(error);
       });
@@ -82,7 +81,6 @@ function Dashboard() {
       .then((response) => {
         setFetchedVegetablesData(response.data);
       })
-      // The routes are already protected
       .catch((error) => {
         console.log(error);
       });
@@ -118,7 +116,6 @@ function Dashboard() {
       .then((response) => {
         setFetchedTotalOrders(response.data);
       })
-      // The routes are already protected
       .catch((error) => {
         console.log(error);
       });

@@ -2,11 +2,9 @@ import { Card, Grid } from "@mui/material";
 import React from "react";
 import { Chart } from "react-google-charts";
 
-
 function PieChart(props) {
-    let chartData = props.data;
-    const chartTitle = {title: props.title};
-    console.log(chartData);
+  let chartData = props.data;
+  const chartTitle = { title: props.title };
   return (
     <Grid item xs={12}>
       <Card elevation={7}>

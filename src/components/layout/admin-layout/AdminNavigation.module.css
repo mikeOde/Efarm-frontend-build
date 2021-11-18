@@ -1,8 +1,12 @@
-.logoutLink{
+.logoutLink {
   color: red;
 }
-.logoutLink:hover{
+.logoutLink:hover {
   color: red;
+}
+
+.NavBrand {
+  padding-right: 1rem;
 }
 
 .navList {
@@ -17,11 +21,7 @@
 .navList:hover,
 .navList a:active,
 .navList a.active {
-  color: #EB961E;
-}
-
-.NavBrand {
-  padding-right: 1rem;
+  color: #eb961e;
 }
 
 .profileLink {
@@ -30,5 +30,5 @@
 }
 
 .profileLink:hover {
-  color: #EB961E;
+  color: #eb961e;
 }

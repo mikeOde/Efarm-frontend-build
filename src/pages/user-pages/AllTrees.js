@@ -19,7 +19,6 @@ function AllTrees() {
     api
       .getAllTrees()
       .then((response) => {
-        console.log(response);
         setFetchedTrees(response.data);
       })
       .catch((error) => {

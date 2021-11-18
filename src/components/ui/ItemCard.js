@@ -11,14 +11,11 @@ import api from "../../service/api";
 
 function ItemCard(props) {
   function deleteHandler() {
-    console.log(props.type);
-    console.log(parseInt(props.id));
     const itemId = parseInt(props.id);
     const deleteItemData = {
       id: itemId,
     };
     if (props.type === "1") {
-      console.log("vegetable");
       api
         .deleteVegetable(deleteItemData, {
           headers: {

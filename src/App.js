@@ -21,6 +21,7 @@ function App() {
     // HashRouter is used to solve error 404 caused by Github Pages not supporting Single page apps
     <HashRouter>
       <Route path="/" exact component={RegistrationForm} />
+      
       <ProtectedFarmerRoute path="/profile" component={Profile} />
       <ProtectedFarmerRoute path="/dashboard" component={Dashboard} />
       <ProtectedFarmerRoute path="/vegetables" component={Vegetables} />

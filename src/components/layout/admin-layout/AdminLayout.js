@@ -14,4 +14,3 @@ function AdminLayout(props) {
 }
 
 export default AdminLayout;
-// Using Grid to give a responsive margin layout

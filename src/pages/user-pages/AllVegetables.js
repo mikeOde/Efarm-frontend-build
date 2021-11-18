@@ -19,7 +19,6 @@ function AllVegetables() {
     api
       .getAllVegetables()
       .then((response) => {
-        console.log(response.data);
         setFetchedVegetables(response.data);
       })
       .catch((error) => {

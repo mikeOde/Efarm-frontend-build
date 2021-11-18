@@ -21,7 +21,6 @@ function AddItemForm(props) {
     const enteredItemPrice = itemPriceInputRef.current.value;
     const enteredItemDescription = itemDescriptionInputRef.current.value;
     const enteredItemPic = itemPicInputRef.current.value;
-    console.log(vegetableApi);
 
     const addItemData = {
       name: enteredItemName,
@@ -30,7 +29,6 @@ function AddItemForm(props) {
       description: enteredItemDescription,
       image: enteredItemPic,
     };
-    console.log(addItemData);
 
     if (vegetableApi === "1") {
       api
@@ -65,9 +63,8 @@ function AddItemForm(props) {
           }
         })
         .catch((error) => {
-          console.log(error.response.data.errors);
+          console.log(error);
           alert("Invalid data");
-          window.location.reload();
         });
     }
   }

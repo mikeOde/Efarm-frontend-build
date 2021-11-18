@@ -6,10 +6,6 @@ import loginLogo from "./images/loginLogo.png";
 import api from "../service/api";
 
 function Login() {
-  // localStorage.setItem("user_name", "");
-  // localStorage.setItem("access_token", "");
-  // localStorage.setItem("user_type", "");
-
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const history = useHistory();
@@ -34,12 +30,10 @@ function Login() {
         const fname = response.data.user.first_name;
         const lname = response.data.user.last_name;
         const fullName = fname + " " + lname;
-        console.log(response);
         if (response.data.user.user_type_id === 1) {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
-          console.log("farmer");
           setTimeout(() => {
             history.push("/profile");
           }, 1000);
@@ -47,7 +41,6 @@ function Login() {
           localStorage.setItem("user_name", fullName);
           localStorage.setItem("access_token", response.data.access_token);
           localStorage.setItem("user_type", response.data.user.user_type_id);
-          console.log("customer");
           setTimeout(() => {
             history.push("/home");
           }, 1000);

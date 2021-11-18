@@ -32,7 +32,6 @@ function EditProfileForm(props) {
       lng: enteredFarmLongitude,
     };
 
-    console.log(editProfileData);
     api
       .editFarmerProfile(editProfileData, {
         headers: {

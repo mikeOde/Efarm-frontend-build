@@ -21,11 +21,7 @@ function TabPanel(props) {
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box>
-     {children}
-        </Box>
-      )}
+      {value === index && <Box>{children}</Box>}
     </div>
   );
 }
@@ -81,7 +77,7 @@ function RegistrationForm() {
             <Login />
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
-            <Signup/>
+            <Signup />
           </TabPanel>
         </SwipeableViews>
       </Box>
